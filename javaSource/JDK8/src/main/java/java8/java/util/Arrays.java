@@ -135,7 +135,8 @@ public class Arrays {
      * @param a the array to be sorted
      */
     public static void sort(int[] a) {
-        java.util.DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
+      
     }
 
     /**
@@ -160,7 +161,7 @@ public class Arrays {
      */
     public static void sort(int[] a, int fromIndex, int toIndex) {
         rangeCheck(a.length, fromIndex, toIndex);
-        java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
     }
 
     /**
@@ -175,7 +176,7 @@ public class Arrays {
      * @param a the array to be sorted
      */
     public static void sort(long[] a) {
-        java.util.DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
     }
 
     /**
@@ -200,7 +201,7 @@ public class Arrays {
      */
     public static void sort(long[] a, int fromIndex, int toIndex) {
         rangeCheck(a.length, fromIndex, toIndex);
-        java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
     }
 
     /**
@@ -215,7 +216,7 @@ public class Arrays {
      * @param a the array to be sorted
      */
     public static void sort(short[] a) {
-        java.util.DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
     }
 
     /**
@@ -240,7 +241,7 @@ public class Arrays {
      */
     public static void sort(short[] a, int fromIndex, int toIndex) {
         rangeCheck(a.length, fromIndex, toIndex);
-        java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
     }
 
     /**
@@ -255,7 +256,7 @@ public class Arrays {
      * @param a the array to be sorted
      */
     public static void sort(char[] a) {
-        java.util.DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
     }
 
     /**
@@ -280,7 +281,7 @@ public class Arrays {
      */
     public static void sort(char[] a, int fromIndex, int toIndex) {
         rangeCheck(a.length, fromIndex, toIndex);
-        java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
     }
 
     /**
@@ -295,7 +296,7 @@ public class Arrays {
      * @param a the array to be sorted
      */
     public static void sort(byte[] a) {
-        java.util.DualPivotQuicksort.sort(a, 0, a.length - 1);
+        DualPivotQuicksort.sort(a, 0, a.length - 1);
     }
 
     /**
@@ -320,7 +321,7 @@ public class Arrays {
      */
     public static void sort(byte[] a, int fromIndex, int toIndex) {
         rangeCheck(a.length, fromIndex, toIndex);
-        java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1);
+        DualPivotQuicksort.sort(a, fromIndex, toIndex - 1);
     }
 
     /**
@@ -343,7 +344,7 @@ public class Arrays {
      * @param a the array to be sorted
      */
     public static void sort(float[] a) {
-        java.util.DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
     }
 
     /**
@@ -376,7 +377,7 @@ public class Arrays {
      */
     public static void sort(float[] a, int fromIndex, int toIndex) {
         rangeCheck(a.length, fromIndex, toIndex);
-        java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
     }
 
     /**
@@ -399,7 +400,7 @@ public class Arrays {
      * @param a the array to be sorted
      */
     public static void sort(double[] a) {
-        java.util.DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
     }
 
     /**
@@ -432,7 +433,7 @@ public class Arrays {
      */
     public static void sort(double[] a, int fromIndex, int toIndex) {
         rangeCheck(a.length, fromIndex, toIndex);
-        java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
     }
 
     /**
@@ -457,9 +458,9 @@ public class Arrays {
         int n = a.length, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, 0, n - 1);
+            DualPivotQuicksort.sort(a, 0, n - 1);
         else
-            new java.util.ArraysParallelSortHelpers.FJByte.Sorter
+            new ArraysParallelSortHelpers.FJByte.Sorter
                 (null, a, new byte[n], 0, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -497,9 +498,9 @@ public class Arrays {
         int n = toIndex - fromIndex, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1);
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1);
         else
-            new java.util.ArraysParallelSortHelpers.FJByte.Sorter
+            new ArraysParallelSortHelpers.FJByte.Sorter
                 (null, a, new byte[n], fromIndex, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -527,9 +528,9 @@ public class Arrays {
         int n = a.length, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJChar.Sorter
+            new ArraysParallelSortHelpers.FJChar.Sorter
                 (null, a, new char[n], 0, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -567,9 +568,9 @@ public class Arrays {
         int n = toIndex - fromIndex, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJChar.Sorter
+            new ArraysParallelSortHelpers.FJChar.Sorter
                 (null, a, new char[n], fromIndex, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -597,9 +598,9 @@ public class Arrays {
         int n = a.length, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJShort.Sorter
+            new ArraysParallelSortHelpers.FJShort.Sorter
                 (null, a, new short[n], 0, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -637,9 +638,9 @@ public class Arrays {
         int n = toIndex - fromIndex, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJShort.Sorter
+            new ArraysParallelSortHelpers.FJShort.Sorter
                 (null, a, new short[n], fromIndex, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -667,9 +668,9 @@ public class Arrays {
         int n = a.length, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJInt.Sorter
+            new ArraysParallelSortHelpers.FJInt.Sorter
                 (null, a, new int[n], 0, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -707,9 +708,9 @@ public class Arrays {
         int n = toIndex - fromIndex, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJInt.Sorter
+            new ArraysParallelSortHelpers.FJInt.Sorter
                 (null, a, new int[n], fromIndex, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -737,9 +738,9 @@ public class Arrays {
         int n = a.length, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJLong.Sorter
+            new ArraysParallelSortHelpers.FJLong.Sorter
                 (null, a, new long[n], 0, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -777,9 +778,9 @@ public class Arrays {
         int n = toIndex - fromIndex, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJLong.Sorter
+            new ArraysParallelSortHelpers.FJLong.Sorter
                 (null, a, new long[n], fromIndex, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -815,9 +816,9 @@ public class Arrays {
         int n = a.length, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJFloat.Sorter
+            new ArraysParallelSortHelpers.FJFloat.Sorter
                 (null, a, new float[n], 0, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -863,9 +864,9 @@ public class Arrays {
         int n = toIndex - fromIndex, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJFloat.Sorter
+            new ArraysParallelSortHelpers.FJFloat.Sorter
                 (null, a, new float[n], fromIndex, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -901,9 +902,9 @@ public class Arrays {
         int n = a.length, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJDouble.Sorter
+            new ArraysParallelSortHelpers.FJDouble.Sorter
                 (null, a, new double[n], 0, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -949,9 +950,9 @@ public class Arrays {
         int n = toIndex - fromIndex, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJDouble.Sorter
+            new ArraysParallelSortHelpers.FJDouble.Sorter
                 (null, a, new double[n], fromIndex, n, 0,
                  ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
                  MIN_ARRAY_SORT_GRAN : g).invoke();
@@ -996,9 +997,9 @@ public class Arrays {
         int n = a.length, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.TimSort.sort(a, 0, n, NaturalOrder.INSTANCE, null, 0, 0);
+            TimSort.sort(a, 0, n, NaturalOrder.INSTANCE, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJObject.Sorter<T>
+            new ArraysParallelSortHelpers.FJObject.Sorter<T>
                 (null, a,
                  (T[])Array.newInstance(a.getClass().getComponentType(), n),
                  0, n, 0, ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
@@ -1055,9 +1056,9 @@ public class Arrays {
         int n = toIndex - fromIndex, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.TimSort.sort(a, fromIndex, toIndex, NaturalOrder.INSTANCE, null, 0, 0);
+            TimSort.sort(a, fromIndex, toIndex, NaturalOrder.INSTANCE, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJObject.Sorter<T>
+            new ArraysParallelSortHelpers.FJObject.Sorter<T>
                 (null, a,
                  (T[])Array.newInstance(a.getClass().getComponentType(), n),
                  fromIndex, n, 0, ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
@@ -1104,9 +1105,9 @@ public class Arrays {
         int n = a.length, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.TimSort.sort(a, 0, n, cmp, null, 0, 0);
+            TimSort.sort(a, 0, n, cmp, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJObject.Sorter<T>
+            new ArraysParallelSortHelpers.FJObject.Sorter<T>
                 (null, a,
                  (T[])Array.newInstance(a.getClass().getComponentType(), n),
                  0, n, 0, ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
@@ -1165,9 +1166,9 @@ public class Arrays {
         int n = toIndex - fromIndex, p, g;
         if (n <= MIN_ARRAY_SORT_GRAN ||
             (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
-            java.util.TimSort.sort(a, fromIndex, toIndex, cmp, null, 0, 0);
+            TimSort.sort(a, fromIndex, toIndex, cmp, null, 0, 0);
         else
-            new java.util.ArraysParallelSortHelpers.FJObject.Sorter<T>
+            new ArraysParallelSortHelpers.FJObject.Sorter<T>
                 (null, a,
                  (T[])Array.newInstance(a.getClass().getComponentType(), n),
                  fromIndex, n, 0, ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
@@ -1237,7 +1238,7 @@ public class Arrays {
         if (LegacyMergeSort.userRequested)
             legacyMergeSort(a);
         else
-            java.util.ComparableTimSort.sort(a, 0, a.length, null, 0, 0);
+            ComparableTimSort.sort(a, 0, a.length, null, 0, 0);
     }
 
     /** To be removed in a future release. */
@@ -1303,7 +1304,7 @@ public class Arrays {
         if (LegacyMergeSort.userRequested)
             legacyMergeSort(a, fromIndex, toIndex);
         else
-            java.util.ComparableTimSort.sort(a, fromIndex, toIndex, null, 0, 0);
+            ComparableTimSort.sort(a, fromIndex, toIndex, null, 0, 0);
     }
 
     /** To be removed in a future release. */
@@ -1428,7 +1429,7 @@ public class Arrays {
         if (LegacyMergeSort.userRequested)
             legacyMergeSort(a, c);
         else
-            java.util.TimSort.sort(a, 0, a.length, c, null, 0, 0);
+            TimSort.sort(a, 0, a.length, c, null, 0, 0);
     }
 
     /** To be removed in a future release. */
@@ -1500,7 +1501,7 @@ public class Arrays {
         if (LegacyMergeSort.userRequested)
             legacyMergeSort(a, fromIndex, toIndex, c);
         else
-            java.util.TimSort.sort(a, fromIndex, toIndex, c, null, 0, 0);
+            TimSort.sort(a, fromIndex, toIndex, c, null, 0, 0);
     }
 
     /** To be removed in a future release. */
