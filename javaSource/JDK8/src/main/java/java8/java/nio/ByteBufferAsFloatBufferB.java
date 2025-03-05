@@ -71,6 +71,7 @@ class ByteBufferAsFloatBufferB                  // package-private
 
     }
 
+    @Override
     public FloatBuffer slice() {
         int pos = this.position();
         int lim = this.limit();
@@ -81,6 +82,7 @@ class ByteBufferAsFloatBufferB                  // package-private
         return new java.nio.ByteBufferAsFloatBufferB(bb, -1, 0, rem, rem, off);
     }
 
+    @Override
     public FloatBuffer duplicate() {
         return new java.nio.ByteBufferAsFloatBufferB(bb,
                                                     this.markValue(),
@@ -90,6 +92,7 @@ class ByteBufferAsFloatBufferB                  // package-private
                                                     offset);
     }
 
+    @Override
     public FloatBuffer asReadOnlyBuffer() {
 
         return new java.nio.ByteBufferAsFloatBufferRB(bb,
